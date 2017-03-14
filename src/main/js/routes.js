@@ -7,8 +7,10 @@ import CoursePage from './components/courses/CoursePage';
 import Learning from './components/courses/Learning';
 import PromotionList from './components/promotion/PromotionList';
 
+const base_path ="/campaign-ui/";
+
 export default(
-    <Route path="/" component={App}>
+    <Route path={base_path} component={App}>
         <IndexRoute component={HomePage} />
         <Route path="courses" component={CoursePage} />
         <Route path="about" component={AboutPage} />

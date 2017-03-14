@@ -16,13 +16,13 @@ import static org.springframework.web.bind.annotation.RequestMethod.GET;
  */
 @RestController
 @RequestMapping(value = "/api", produces = APPLICATION_JSON_VALUE)
-public class PromoController {
+public class PromoApiController {
 
     private static final String GET_PROMO_DETAILS = "/getPromoDetails";
 
     private static final String TEST = "/test";
 
-    @RequestMapping(path = PromoController.GET_PROMO_DETAILS, method = GET)
+    @RequestMapping(path = PromoApiController.GET_PROMO_DETAILS, method = GET)
     @ResponseBody
     public List<Promo> index() {
 
@@ -43,7 +43,7 @@ public class PromoController {
         return promoList;
     }
 
-    @RequestMapping(path = PromoController.TEST, method = GET)
+    @RequestMapping(path = PromoApiController.TEST, method = GET)
     @ResponseBody
     public String test() {
         return "success";

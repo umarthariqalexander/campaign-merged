@@ -1,17 +1,5 @@
 import * as types from './actionTypes';
 import { makeApiRequest } from '../utils/apiRequest';
-import CourseApi from '../api/mockCourseApi';
-
-
-export function getCourseList(){
-    return dispatch => {
-        return CourseApi.getAllCourses().then(listCourses => {dispatch(loadCourseSuccess(listCourses));
-        }).catch(error => {
-            throw(error);
-            }
-        );
-    };
-}
 
 export function loadCourseSuccess(listCourses){
     return {type:types.LIST_COURSES, listCourses};
