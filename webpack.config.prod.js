@@ -23,6 +23,7 @@ var config =  {
     library: 'Campaign'
   },
   module: {
+    preLoaders: [{test: /(\.jsx|\.js)$/, loader: 'eslint-loader', include: SRC, exclude: ['./node_modules']}],
     loaders: [
       {test: /(\.jsx|\.js)$/, include: SRC, loaders: ['babel']}, // handling jsx files
       {test: /(\.css|\.scss)$/, loader: ExtractTextPlugin.extract('css?sourceMap!sass?sourceMap!autoprefixer-loader')}, // Converting SCSS --> CSS files

@@ -13,7 +13,7 @@ const PromoTable = (props) => {
                         <th>Combination Type</th>
                         <th>Priority Level</th>
                     </tr>
-                {props.promotions.map((item, index) => {
+                {props.promotions.value.map((item, index) => {
                     return(
                         <tr key={index}>
                             <td>{item.promoName}</td>
@@ -30,5 +30,6 @@ const PromoTable = (props) => {
             </table>
     );
 };
+
 
 export default PromoTable;

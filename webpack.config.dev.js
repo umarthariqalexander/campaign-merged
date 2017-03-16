@@ -5,7 +5,6 @@ var validate = require('webpack-validator');
 var SRC = path.resolve(__dirname, 'src/main/js/');
 var DEST = path.resolve(__dirname, 'src/main/resources/static/app/');
 
-
 var config =  {
   cache: true,
   entry: [
@@ -23,6 +22,7 @@ var config =  {
     library: 'Campaign'
   },
   module: {
+    preLoaders: [{test: /(\.jsx|\.js)$/, loader: 'eslint-loader', include: SRC, exclude: ['./node_modules']}],
     loaders: [
       {test: /(\.jsx|\.js)$/, include: SRC, loaders: ['babel']}, // handling jsx files
       {test: /(\.css|\.scss)$/, include: SRC, loader: 'style!css?sourceMap!autoprefixer-loader!sass?sourceMap'}, // Converting SCSS --> CSS files
@@ -46,9 +46,7 @@ var config =  {
     port: 9090,
     proxy: {
         '/**': {
-
             target: 'http://localhost:8080/campaign-ui',
-
             secure: false,
             // node-http-proxy option - don't add /localhost:8080/ to proxied request paths
             prependPath: false

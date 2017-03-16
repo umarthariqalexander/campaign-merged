@@ -24,8 +24,9 @@ public class PromoApiController {
 
     @RequestMapping(path = PromoApiController.GET_PROMO_DETAILS, method = GET)
     @ResponseBody
-    public List<Promo> index() {
+    public BaseClass index() {
 
+        BaseClass base = new BaseClass();
         List promoList = new ArrayList();
 
         for(int i=0; i<5 ; i++) {
@@ -40,7 +41,10 @@ public class PromoApiController {
 
             promoList.add(promo);
         }
-        return promoList;
+
+        base.setSuccess(true);
+        base.setValue(promoList);
+        return base;
     }
 
     @RequestMapping(path = PromoApiController.TEST, method = GET)

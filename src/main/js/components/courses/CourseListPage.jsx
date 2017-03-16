@@ -24,14 +24,19 @@ const CourseListPage = (props) => {
 };
 
 CourseListPage.propTypes={
-    // courseList(props,propName,component){
-    //     if(props.courseList.length === 4){
-    //         return new Error(`Array length should be greather than 4`); // custom props validation
-    //     }
-    // }
-}
+    courseList(props,propName,component){
+        if(props.courseList.length === 4){
+            return new Error(`Array length should be greather than 4`); // custom props validation
+        }
+    },
+    name(props, propName, component){
+        if(props.name === ''){
+            return new Error('Name should not be empty');
+        }
+    }
+};
 CourseListPage.defaultProps={
     name:"CourseListChildStateLess Component"
-}
+};
 
 export default CourseListPage;

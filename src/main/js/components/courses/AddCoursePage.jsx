@@ -7,7 +7,7 @@ class AddCoursePage extends React.Component{
         super(props,context);
         this.state={
             'course':{'courseName':''}
-        }
+        };
         this.onTitleChange = this.onTitleChange.bind(this);
         this.updateText = this.updateText.bind(this);
         // this.onSaveText = props.onSaveText.bind(this);
@@ -31,5 +31,9 @@ class AddCoursePage extends React.Component{
         );
     }
 }
+
+AddCoursePage.propTypes ={
+    onSaveText: PropTypes.func.isRequired
+};
 
 export default AddCoursePage;

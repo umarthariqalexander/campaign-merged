@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 @Controller
 public class HomeController {
 
-  @RequestMapping("/")
+  @RequestMapping("/*")
   public String showHubOnborading(Model model, HttpServletRequest request) {
     State.populateModel(model, request);
     System.out.println("==========Index Path IN JAVA CONTROLLER========");
